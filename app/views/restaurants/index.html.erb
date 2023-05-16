@@ -7,7 +7,7 @@
   </div>
   <div class="cards">
     <% @restaurants.each do |restaurant| %>
-      <%= render 'restaurants/card', restaurant: restaurant %>
+      <%= render 'restaurants/card', restaurant: restaurant, show_owner: true %>
     <% end %>
   </div>
 </div>

@@ -12,7 +12,7 @@
           <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/dmbf29", class: "avatar" %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user ? current_user.username : 'ssaunier'}", class: "avatar" %>
         </li>
       </ul>
     </div>
