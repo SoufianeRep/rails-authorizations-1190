@@ -2,6 +2,14 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = policy_scope(Restaurant)
+    @markers = Restaurant.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { restaurant: restaurant}),
+        marker_html: render_to_string(partial: "marker", locals: { restaurant: restaurant })
+      }
+    end
   end
 
   def show
